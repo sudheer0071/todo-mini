@@ -74,7 +74,11 @@ route.post('/todo', validationMiddleware, async (req,res)=>{
   await User.updateOne({username:username}, {
      "$push":{todos:todos._id}
   })
- res.json({message:"Todo is created"})
+  const todoss = await Todo.find({_id:{"$in":user.todos}})
+    const newtodos = todoss.map((todo)=>({
+      title:todo.title, description:todo.description
+    }))
+ res.json({message:"Todo is created" })
  
 }) 
 route.get('/todos', validationMiddleware, async (req,res)=>{
