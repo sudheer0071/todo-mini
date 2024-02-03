@@ -29,7 +29,7 @@ a:hover {
   min-width: 320px;
   min-height: 100vh;
 } */
-.popups{
+.success{
   position: fixed;
   display: inline;
   top: 1px; 
@@ -39,6 +39,17 @@ a:hover {
   background-color: rgb(30, 212, 151);
   color: #1a1a1a;
 }
+.warn{
+  position: fixed;
+  display: inline;
+  top: 1px; 
+  width: 120%;
+  justify-content: center;
+  margin-left: -21%; 
+  background-color: rgb(231, 127, 127);
+  color: #1a1a1a;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -70,6 +81,44 @@ input{
   transition: box-shadow 0.5s;
   box-shadow: 0 0 0.5em rgb(0, 0, 0);
 }
+
+ 
+  
+input.error {
+  -webkit-animation: shake 0.2s ease-in-out 0s 2;
+          animation: shake 0.2s ease-in-out 0s 2;
+  box-shadow: 0 0 0.5em red;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    margin-left: 0rem;
+  }
+  25% {
+    margin-left: 0.5rem;
+  }
+  75% {
+    margin-left: -0.5rem;
+  }
+  100% {
+    margin-left: 0rem;
+  }
+}
+
+@keyframes shake {
+  0% {
+    margin-left: 0rem;
+  }
+  25% {
+    margin-left: 0.5rem;
+  }
+  75% {
+    margin-left: -0.5rem;
+  }
+  100% {
+    margin-left: 0rem;
+  }
+} 
 
 .todoChild{
   background-color: #646cff;

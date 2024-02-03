@@ -31,7 +31,7 @@ useEffect(() => {
   const intervalId = setInterval(fetchTodos, 5000); // Fetch todos every 5 seconds
 
   return () => clearInterval(intervalId); // Clean up interval on component unmount
-}, []);
+}, [todos]);
 
   return (
     <div> 
