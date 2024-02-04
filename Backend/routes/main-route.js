@@ -6,7 +6,7 @@ const { parse } = require("dotenv");
 const secretkey = "12345"
 
 const route = Router()
- 
+   
 route.post('/signup', async(req, res)=>{
   const createPayload = req.body
   const alreadyExist = await User.findOne({username:createPayload.username})  
@@ -46,7 +46,7 @@ route.post('/signin', async(req, res)=>{
       res.json({message:"Fetching Details..."})
     }
   }
-})
+}) 
 
 route.post('/todo', validationMiddleware, async (req,res)=>{
   const createPayload = req.body
@@ -89,6 +89,7 @@ route.get('/todos', validationMiddleware, async (req,res)=>{
     const alltodos = todos.map((todo)=>({
       title:todo.title, description:todo.description
     }))
+    console.log("inside GET");
   res.json({
     Todos:alltodos
   })
