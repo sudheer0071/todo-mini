@@ -1,35 +1,66 @@
 import { useEffect, useState } from 'react'
+import Modal from 'react-modal'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
 import { CreateTodo } from './compnents/CreateTodo'
+import { UpdateTodo } from './compnents/UpdateTodo'
 import { Todos } from './compnents/Todos' 
+
+Modal.setAppElement("#root")
 
   function App() {
   const [todolist, setTodoList] = useState([])
   const [todos, setTodos] = useState([])
- 
-  function todoList(){
-     const todoss = todos.map((todo,index)=>{
-     return <div>
+  const [isOpen, setIsOpen] = useState(false);
+  const [todoId,setTodoId] = useState('')
 
-     <li><span>{index+1}</span>{todo.title}
+  function todoList(){
+
+     const todoss = todos.map((todo,index)=>{
+     return <div key={index}> 
+     <li><span>{index+1}</span>{todo.title} 
      <div className='actions'>
       <button className='list-btns'><i class="far fa-trash-alt"></i></button>
-      <button className='list-btns'><i class="far fa-edit"></i></button>
+      <button className='list-btns' onClick={()=>{setTodoId(todo.id); toggleModal()}} ><i class="far fa-edit"></i></button> 
       <button className='list-btns check'><i class="fas fa-check"></i></button>
      </div>
      </li>
      </div>
-     })
+     }) 
      setTodoList(todoss)
   }
+
+  
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(()=>{
     todoList()
   },[todos])
   return (
-      <div >   
+        <div >    
+        <Modal isOpen={isOpen} onRequestClose={toggleModal} className="Modal" overlayClassName="Overlay"> 
+        <button className="ModalCloseButton" onClick={toggleModal}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="feather feather-x"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+         <UpdateTodo todoid={todoId}></UpdateTodo>
+      </Modal>
             <h1>Todos</h1>
             <CreateTodo ></CreateTodo>  
          <div className='all-todos'> 
@@ -45,7 +76,6 @@ import { Todos } from './compnents/Todos'
               </div>
              </div>
           </div>
-      
        </div>
   )
 }

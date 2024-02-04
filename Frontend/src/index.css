@@ -64,6 +64,8 @@ h1 {
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
+  width: 150px;
+  height: 53px;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
@@ -71,7 +73,8 @@ h1 {
   transition: border-color 0.25s;
 }
 .btn:hover {
-  border-color: #646cff;
+  background-color: #646cff;   
+
 }
 .btn:focus,
 .btn:focus-visible {
@@ -132,6 +135,16 @@ input.error {
   box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+.updatedtodo-inputs{
+  margin-top: 50px;
+}
+.updatetodo-btn{
+  margin-left: 130px;
+}
+.updatetodo-btn:hover{
+  background-color: #30e0ab;
+  color:black;
+}
 .displaytodos{
   display: grid;
   justify-content: center;
@@ -164,8 +177,8 @@ input.error {
   color: #1a1a1a;  
   border-radius: 4px;
   display: flex;
-  width: 300px ;
-  margin-right: 60px;
+  width: 390px ;
+  margin-right: 120px;
   justify-content: left;
   box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -179,7 +192,7 @@ input.error {
   border-radius: 5px;
   text-align: justify;
   margin-top: 2px; 
-  width: 180%;
+  width: 280%;
   background: #fff;
   box-shadow: rgba(116, 67, 231, 0.767) 0px 50px 100px -20px, rgba(88, 25, 235, 0.425) 0px 30px 60px -30px, rgba(100, 145, 230, 0.938) 0px -2px 6px 0px inset;
   transition: transform 0.5s;
@@ -188,9 +201,13 @@ input.error {
   transform: scale(1.1);
   z-index: 5;
   background: #25bcff;
+  /* width: 230%; */
+  padding-right: 5px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
   color: #ffffff;
   opacity: 1;
+
+  font-size: larger;
 }
 .todolist ul li span {
   width: 20px;

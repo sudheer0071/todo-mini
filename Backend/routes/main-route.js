@@ -2,7 +2,7 @@ const { Router } = require("express");
 const { createtodo, updateTodo, createUser, validationMiddleware } = require("../middleware/auth-checks");
 const { Todo, User } = require("../db");
 const jwt = require("jsonwebtoken");
-const { parse } = require("dotenv");
+const { parse } = require("dotenv"); 
 const secretkey = "12345"
 
 const route = Router()
@@ -87,7 +87,7 @@ route.get('/todos', validationMiddleware, async (req,res)=>{
     
   const todos = await Todo.find({_id:{"$in":user.todos}})
     const alltodos = todos.map((todo)=>({
-      title:todo.title, description:todo.description
+      title:todo.title, description:todo.description, id:todo._id
     }))
     console.log("inside GET");
   res.json({
@@ -117,6 +117,20 @@ route.put('/todo/:id', validationMiddleware, async (req,res)=>{
 })
 
 route.delete('/todo/:id',validationMiddleware, async (req,res)=>{
-   
+    const createPayload = req.params
+    const username = req.username
+
+    const user = await User.findOne({username:username})
+    const todoid =   user.todos.includes(createPayload.id)
+    if (!todoid) {
+      return res.json({message:"Something is wrong with todo id"})
+    }
+    const index =   user.todos.indexOf(createPayload.id)
+    console.log(createPayload.id);
+    console.log(index);
+      // user.todos.splice(index,1)
+      await User.updateOne({username:username}, {"$pull":{todos:createPayload.id}})
+      await Todo.deleteOne({_id:createPayload.id})
+    res.json({message:"Todo Deleted"})
 })
-module.exports = route 
+module.exports = route   
