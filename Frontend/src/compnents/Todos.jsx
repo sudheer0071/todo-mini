@@ -34,19 +34,17 @@ const fetchTodos = async  ()=>{
         </div>
       })
       setDisplayTodos(todoss) 
-  }
-
+  } 
   useEffect(()=>{ 
     fetchTodos()
-  },[])
-  // const handleOnclick =  ()=>{
-  //   fetchTodos().then(()=>{
-  //     showtodos()
-  //   })
-  
-  return <div>
-    <button onClick={fetchTodos}>Show todo</button>
+  },[])   
+  return <div> 
+    <div>   
+    <button className="btn" onClick={fetchTodos}>Show todo</button> 
+    </div>
+    <div>
     <div className="displaytodos">{displayTodos}</div>
+    </div>
   </div>
  
 }

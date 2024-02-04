@@ -42,14 +42,16 @@ a:hover {
 }
 .warn{
   position: fixed;
-  display: flex;
+  /* display: flex; */
   top: 1px; 
-  width: 120%;
-  justify-content: center;
+  width: 80%;
+  /* justify-content: center; */
+  text-align: center;
   font-size: larger;
-  margin-left: -21%; 
+  /* margin-left: 1%;  */
   background-color: rgb(231, 127, 127);
   color: #1a1a1a;
+  z-index: 99;
 }
 
 h1 {
@@ -57,7 +59,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+.btn {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -68,15 +70,16 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+.btn:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
+.btn:focus,
+.btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+ 
 
-input{
+.inputs input{
   width: 400px;
   height: 40px;
   font-size: larger;
@@ -84,7 +87,6 @@ input{
   box-shadow: 0 0 0.5em rgb(0, 0, 0);
 }
 
- 
   
 input.error {
   -webkit-animation: shake 0.2s ease-in-out 0s 2;
@@ -134,6 +136,119 @@ input.error {
   display: grid;
   justify-content: center;
   width: 100%;
+}
+
+.sidebar{
+  margin-left: 200px;
+}
+
+.all-todos{
+  display: flex;
+  justify-content: center;
+}
+
+.display-todos{
+  padding-right: 0px;
+}
+.right-bar{
+  padding-left: 420px;
+  top: 200px;
+  margin-top: 0px;
+  margin-left: 820px;
+  position: fixed;
+}
+ 
+
+.todolist{
+  background-color: #747bff;
+  color: #1a1a1a;  
+  border-radius: 4px;
+  display: flex;
+  width: 300px ;
+  margin-right: 60px;
+  justify-content: left;
+  box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.todolist ul:hover li {
+  opacity: 0.5;
+}
+.todolist ul li {
+  list-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: justify;
+  margin-top: 2px; 
+  width: 180%;
+  background: #fff;
+  box-shadow: rgba(116, 67, 231, 0.767) 0px 50px 100px -20px, rgba(88, 25, 235, 0.425) 0px 30px 60px -30px, rgba(100, 145, 230, 0.938) 0px -2px 6px 0px inset;
+  transition: transform 0.5s;
+}
+.todolist ul li:hover {
+  transform: scale(1.1);
+  z-index: 5;
+  background: #25bcff;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  opacity: 1;
+}
+.todolist ul li span {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  background: #25bcff;
+  color: #f5f2f2;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  transform: translateY(-2px);
+}
+.todolist ul li:hover span {
+  background: #fff;
+  color: #25bcff;
+}
+
+.todolist ul li .actions {
+  position: absolute;
+  top: 7px;
+  right: 10px; 
+  display: none; 
+}
+
+.todolist ul li:hover .actions{
+  display: block; 
+}
+.list-btns{
+  color: #fff;
+  font-size: medium;
+  background: #25bcff; 
+  border: none;
+  cursor: pointer; 
+  transition: font-size 0.3s ease;
+}
+
+.list-btns:hover{
+  font-size: larger; 
+}
+
+.check{
+  /* background-color: rgb(83, 133, 226); */
+  border-radius: 5px;
+  margin-left: 7px;
+  transition: font-size 0.5s ease;
+
+}
+.check:hover{
+  background-color: green;
+  border-radius: 30px;
+  font-size: larger;
+}
+
+.list-btns:first-child{
+  margin-right: 10px;
 }
 
 @media (prefers-color-scheme: light) {
