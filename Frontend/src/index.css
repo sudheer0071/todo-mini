@@ -223,7 +223,7 @@ input.error {
   transform: translateY(-2px);
 }
 .todolist ul li:hover span {
-  background: #fff;
+  background: #fff; 
   color: #25bcff;
 }
 
