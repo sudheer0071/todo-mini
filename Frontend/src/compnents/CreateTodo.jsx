@@ -6,7 +6,7 @@ export function CreateTodo(){
   const [description, setDescription] = useState("")
   const [popmessage, setPopMessage] = useState("")
   const [emptyTitle, setEmptyTitle] = useState(false)
-  const [emptyDescription, setEmptyDescription] = useState(false)
+  const [emptyDescription, setEmptyDescription] = useState(false) 
 
   async function addtodo(){
 
@@ -16,11 +16,10 @@ export function CreateTodo(){
          setEmptyDescription(true)
          setTimeout(() => {
            setEmptyTitle(false)
-           setEmptyDescription(false)
+           setEmptyDescription(false)  
            setPopMessage("")
           }, 1000);
-        //  setPopMessage("Please enter both feilds") 
-         setTitle("Please enter title")
+           setPopMessage("Please enter both feilds")   
         }
       else if (title=="") {
         setEmptyTitle(true)
@@ -41,7 +40,6 @@ export function CreateTodo(){
         }
           
     else{
-      
       const response = await fetch("http://localhost:3000/todo",{
         method:'POST',
       headers:{
@@ -66,7 +64,7 @@ export function CreateTodo(){
       }
   }
   return <div>
-    <div className={popmessage.includes('alredy') || popmessage.includes('both') ?'warn':'success'}>{popmessage}</div>
+    <div className={popmessage.includes('alredy') || popmessage.includes('both') || popmessage.includes('title')||popmessage.includes('description')?'warn':'success'}>{popmessage}</div>
     <input type="text" value={title} className={ emptyTitle==true ? 'error' :''} placeholder="Title" id=""  onChange={(e)=>{
       const value = e.target.value
       setTitle(value)
@@ -81,6 +79,7 @@ export function CreateTodo(){
     <br />
     <br />
     <button onClick={addtodo}>Add a Todo</button>
+    <br /><br />
   </div>
 }
 

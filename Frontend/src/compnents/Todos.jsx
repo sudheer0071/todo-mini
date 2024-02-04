@@ -5,8 +5,7 @@ const[displayTodos, setDisplayTodos] = useState([])
 
   function showtodos(){
     console.log(todos);
-   if (todos && todos.length > 0) {
-    
+   if (todos && todos.length > 0) { 
      const todoss = todos.map((todo,index)=>{
         return <div className="todoChild" key={index}>
           <h2>{todo.title}</h2>
