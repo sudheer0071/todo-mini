@@ -250,8 +250,7 @@ input.error {
   font-size: larger; 
 }
 
-.check{
-  /* background-color: rgb(83, 133, 226); */
+.check{ 
   border-radius: 5px;
   margin-left: 7px;
   transition: font-size 0.5s ease;
