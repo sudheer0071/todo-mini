@@ -188,7 +188,7 @@ input.error {
 }
 .todolist ul li {
   list-style: none;
-  padding: 10px;
+  padding: 10px ;
   border-radius: 5px;
   text-align: justify;
   margin-top: 2px; 
