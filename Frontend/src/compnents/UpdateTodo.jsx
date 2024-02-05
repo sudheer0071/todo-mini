@@ -39,11 +39,12 @@ export function UpdateTodo({todoid, onClose}){
         setTitle("")
         setDescription("") 
         setPopMessage("") 
-      }, 2000); 
+        setShowUpdateTodo(false)
+        onClose() 
+      }, 1000); 
       console.log(todos.message);
       setPopMessage(todos.message)
-      // setShowUpdateTodo(false)
-      // onClose()
+ 
     } 
     }
     
