@@ -63,7 +63,7 @@ export function CreateTodo(){
      } 
       }
   }
-  return <div>
+  return <div className="add-todo-section">
     <div className={popmessage.includes('alredy') || popmessage.includes('both') || popmessage.includes('title')||popmessage.includes('description')?'warn':'success'}>{popmessage}</div> 
     <div className="inputs">
     <input type="text" value={title} className={ emptyTitle==true ? 'error' :''} placeholder="Title" id="title"  onChange={(e)=>{

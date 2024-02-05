@@ -12,12 +12,8 @@
 }
 
 /* Style for the modal content */
-.ReactModal__Content {
-  background-color: #646cff;
-  border-radius: 8px;
-  padding: 32px;
-  box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
-  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+.ReactModal__Content {   
+  padding: 32px; 
   position: absolute;
   display: grid;
   justify-content: center;
@@ -25,29 +21,16 @@
   height: 300px;
   top: 129px;
   margin-left: 447px;
-}
-
-/* Style for the modal title */
-.ModalTitle {
-  /* Customize modal title styles here */
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-/* Style for the modal body */
-.ModalBody {
-  /* Customize modal body styles here */
-  font-size: 16px;
-  line-height: 1.5; 
-}
-
+} 
+ 
 /* Style for the close button */
-.ModalCloseButton {
-  /* Customize close button styles here */ 
+.ModalCloseButton { 
   border: none;
   background-color: transparent;
   width: 30px; 
   position: absolute;
+  z-index: 99;
+  top: 30px;
   right: 2px;
   cursor: pointer;
   transition: background-color 0.3s ease;

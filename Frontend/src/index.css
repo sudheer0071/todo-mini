@@ -29,37 +29,34 @@ a:hover {
   min-width: 320px;
   min-height: 100vh;
 } */
-.success{ 
+
+#pop-message{ 
   position: fixed;
   display: flex;
-  top: 1px; 
-  width: 120%;
   justify-content: center;
-  margin-left: -21%; 
+  top: 0px;
+  left: 0px;
+  width: 100%; 
+  text-align: center;
   font-size: larger;
+  z-index: 99;
+}
+.success{   
   background-color: rgb(30, 212, 151);
   color: #1a1a1a;
 }
-.warn{
-  position: fixed;
-  /* display: flex; */
-  top: 1px; 
-  width: 80%;
-  /* justify-content: center; */
-  text-align: center;
-  font-size: larger;
-  /* margin-left: 1%;  */
-  background-color: rgb(231, 127, 127);
-  color: #1a1a1a;
-  z-index: 99;
-}
 
+.warn{ 
+  background-color: rgb(231, 127, 127);
+  color: #1a1a1a; 
+}
+ 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-.btn {
+.btn {  
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -135,11 +132,30 @@ input.error {
   box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
+.update-todo-section{
+  background-color: #25bcff;
+  width: 680PX;
+  height: 330PX;
+  border-radius: 5px;
+  position: absolute; 
+  right: 1px;
+  display: grid;
+  justify-content: center;
+  box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 .updatedtodo-inputs{
-  margin-top: 50px;
+  margin-top: 50px; 
+}
+.update-todo{
+  position: fixed;
 }
 .updatetodo-btn{
-  margin-left: 130px;
+  position: absolute;
+  top: 200px;
+
+  margin-left:270px; 
 }
 .updatetodo-btn:hover{
   background-color: #30e0ab;
@@ -164,21 +180,20 @@ input.error {
   padding-right: 0px;
 }
 .right-bar{
-  padding-left: 420px;
+  /* z-index: 5; */
+  /* padding-left: 420px; */
   top: 200px;
-  margin-top: 0px;
-  margin-left: 820px;
+  right: 0px;
   position: fixed;
 }
- 
-
+  
 .todolist{
   background-color: #747bff;
   color: #1a1a1a;  
   border-radius: 4px;
   display: flex;
   width: 390px ;
-  margin-right: 120px;
+  margin-right: 10px;
   justify-content: left;
   box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);

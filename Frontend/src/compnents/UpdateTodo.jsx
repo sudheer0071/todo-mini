@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react"
 
 
-export function UpdateTodo({todoid}){  
+export function UpdateTodo({todoid, onClose}){  
  const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [popmessage, setPopMessage] = useState("")
   const [emptyTitle, setEmptyTitle] = useState(false)
   const [emptyDescription, setEmptyDescription] = useState(false) 
+  const [showupdateTodo, setShowUpdateTodo] = useState(true)
 
-  async function updatetodo(){
+  
+  const updatetodo = async()=>{
    console.log(todoid); 
          if (title=="" && description=="") {
          setEmptyTitle(true)
@@ -18,36 +20,38 @@ export function UpdateTodo({todoid}){
            setEmptyDescription(false)  
            setPopMessage("")
           }, 1000);
-           setPopMessage("Please enter both feilds")   
-        } 
-      
-          
-    else{
+           setPopMessage("Please enter atleast one feild")   
+          }  
+          else{
       const response = await fetch("http://localhost:3000/todo/"+todoid,{
         method:'PUT',
-      headers:{
-        "Content-Type":"application/json",
-        "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvaG5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjNkNDUiLCJpYXQiOjE3MDcwNjI2MDJ9.PijKvueqJLIU2rvn0zJxKJhKgREBAL0ZuBIbDI6w_3o"
+        headers:{
+          "Content-Type":"application/json",
+          "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvaG5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjNkNDUiLCJpYXQiOjE3MDcwNjI2MDJ9.PijKvueqJLIU2rvn0zJxKJhKgREBAL0ZuBIbDI6w_3o"
       },
-      body: JSON.stringify({title:title , description:description})
+      body: JSON.stringify({title:title})
     })
     const todos = await response.json()
-    console.log(todos.message);
     if (response.ok) {
-     console.log(title, description);
-       
-        setTimeout(() => {
-          setPopMessage("") 
-          setTitle("")
-          setDescription("") 
-        }, 1000); 
-        setPopMessage(todos.message)
-  
-     } 
-      }
+      console.log(title, description); 
+      console.log(todos.message); 
+      setTimeout(() => {
+        setTitle("")
+        setDescription("") 
+        setPopMessage("") 
+      }, 2000); 
+      console.log(todos.message);
+      setPopMessage(todos.message)
+      // setShowUpdateTodo(false)
+      // onClose()
+    } 
+    }
+    
   }
-  return <div>
-    <div className={popmessage.includes('alredy') || popmessage.includes('both') || popmessage.includes('title')||popmessage.includes('description')?'warn':'success'}>{popmessage}</div> 
+  return (<div>
+    <div id="pop-message" className={popmessage.includes('atleast')?'warn':'success'}>{popmessage}</div> 
+    {showupdateTodo&& (
+      <div className="update-todo-section">
     <div className="inputs updatedtodo-inputs">
     <input type="text" value={title} className={ emptyTitle==true ? 'error' :''} placeholder="Title" id="title"  onChange={(e)=>{
       const value = e.target.value
@@ -63,7 +67,11 @@ export function UpdateTodo({todoid}){
     </div>
     <br />
     <br />
-    <button className="btn updatetodo-btn" onClick={updatetodo}>Update Todo</button>
-    <br /><br />
+    <div className="update-todo">
+    <button className="btn updatetodo-btn" type="sibmit" onClick={updatetodo}>Update Todo</button>
+    </div> 
+     </div>
+  )}  
   </div>
+  )
 }
