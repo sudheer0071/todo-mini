@@ -82,8 +82,7 @@ h1 {
 .inputs input{
   width: 400px;
   height: 40px;
-  border-radius: 5px;
-  text-align: 30px;
+  border-radius: 5px; 
   background-color: rgb(48, 45, 45);
   font-size: larger;
   transition: box-shadow 0.5s;
