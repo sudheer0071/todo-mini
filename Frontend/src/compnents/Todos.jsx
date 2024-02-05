@@ -13,7 +13,9 @@ const fetchTodos = async  ()=>{
       },
     });
     if (response.ok) {
-      const todosData = await response.json();
+      const todosData =
+     await response.json();
+      console.log(todosData.Todos);
       setTodos(todosData.Todos);
       showtodos()
     } else {

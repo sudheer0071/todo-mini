@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 
-export function CreateTodo(){  
+export function CreateTodo({setTodos}){  
  const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [popmessage, setPopMessage] = useState("")
@@ -57,9 +57,10 @@ export function CreateTodo(){
           setPopMessage("") 
           setTitle("")
           setDescription("") 
+          setTodos(todos.todos)
         }, 1000); 
         setPopMessage(todos.message)
-  
+        console.log(todos.todos);
      } 
       }
   }

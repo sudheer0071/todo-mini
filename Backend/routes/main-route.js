@@ -57,29 +57,30 @@ route.post('/todo', validationMiddleware, async (req,res)=>{
     return res.send("You sent wrong inputs")
   }  
 
-  const user = await User.findOne({username:username})
-
+  
   // pending logic of already existing todo for a particular user
-
+  
   const alltodos = await Todo.findOne({title:createPayload.title}) 
   if (alltodos) {
     return res.json({message:"You already Created this todo"})
   }
- 
+  
   // After adding data in mongoDb databse...  
- console.log(username);
+  console.log(username);
   const todos = await Todo.create({
     title:createPayload.title, description:createPayload.description
   })  
   await User.updateOne({username:username}, {
-     "$push":{todos:todos._id}
+    "$push":{todos:todos._id}
   })
+  const user = await User.findOne({username:username})
   const todoss = await Todo.find({_id:{"$in":user.todos}})
-    const newtodos = todoss.map((todo)=>({
-      title:todo.title, description:todo.description
-    }))
- res.json({message:"Todo is created" })
- 
+  const newtodos = todoss.map((todo)=>({
+    title:todo.title, description:todo.description
+  }))
+  console.log(newtodos);
+  res.json({message:"Todo is created", todos:newtodos}) 
+  
 }) 
 route.get('/todos', validationMiddleware, async (req,res)=>{
   const username = req.username

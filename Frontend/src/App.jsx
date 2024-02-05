@@ -13,16 +13,16 @@ Modal.setAppElement("#root")
   const [todolist, setTodoList] = useState([])
   const [todos, setTodos] = useState([])
   const [isOpen, setIsOpen] = useState(false);
-  const [todoId,setTodoId] = useState('')
-
+  const [updateTodoId,setUpdateTodoId] = useState('')
+  const [deleteTodo,setDeleteTodo] = useState('')
+ 
   function todoList(){
-
      const todoss = todos.map((todo,index)=>{
      return <div key={index}> 
      <li><span>{index+1}</span>{todo.title} 
      <div className='actions'>
-      <button className='list-btns'><i class="far fa-trash-alt"></i></button>
-      <button className='list-btns' onClick={()=>{setTodoId(todo.id); toggleModal()}} ><i class="far fa-edit"></i></button> 
+      <button className='list-btns' onClick={}><i class="far fa-trash-alt"></i></button>
+      <button className='list-btns' onClick={()=>{setUpdateTodoId(todo.id); toggleModal()}} ><i class="far fa-edit"></i></button>
       <button className='list-btns check'><i class="fas fa-check"></i></button>
      </div>
      </li>
@@ -30,8 +30,7 @@ Modal.setAppElement("#root")
      }) 
      setTodoList(todoss)
   }
-
-  
+ 
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
@@ -59,10 +58,10 @@ Modal.setAppElement("#root")
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
-         <UpdateTodo todoid={todoId} onClose={toggleModal}></UpdateTodo>
+         <UpdateTodo todoid={updateTodoId} onClose={toggleModal}></UpdateTodo>
       </Modal>
             <h1>Todos</h1>
-            <CreateTodo ></CreateTodo>  
+            <CreateTodo setTodos={setTodos}></CreateTodo>  
          <div className='all-todos'> 
             <div className="display-todos"> 
               <Todos
@@ -73,7 +72,7 @@ Modal.setAppElement("#root")
                 <h2>Todos list</h2>
               <div className="todolist">
                 <ul>{todolist}</ul>
-              </div>
+              </div> 
              </div>
           </div>
        </div>

@@ -141,8 +141,11 @@ input.error {
   width: 680PX;
   height: 330PX;
   border-radius: 5px;
-  position: absolute; 
+  position: absolute;
+  margin-right: 383px;
+  margin-top: 190px;
   right: 1px;
+  margin-left: 20px;
   display: grid;
   justify-content: center;
   box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
@@ -182,38 +185,48 @@ input.error {
 .display-todos{
   padding-right: 0px;
 }
-.right-bar{
-  /* z-index: 5; */
-  /* padding-left: 420px; */
-  top: 200px;
+.right-bar{ 
+  top: 100px;
   right: 0px;
   position: fixed;
+  /* max-height: 550px; */
+  height: 20px;
 }
-  
-.todolist{
-  background-color: #747bff;
-  color: #1a1a1a;  
+
+.todolist{ 
+  background-color: #747bff; 
+  overflow-y: auto;
+  display: grid;
+  position: relative;
+  overflow-x: hidden;
+  color: #1a1a1a;
+  max-height: 400px; color: #1a1a1a;  
   border-radius: 4px;
   display: flex;
-  width: 390px ;
-  margin-right: 10px;
+  max-height: 550px;
+  width: 400px ;
+  margin-right: 30px;
   justify-content: left;
   box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+ 
 .todolist ul:hover li {
   opacity: 0.5;
 }
 .todolist ul li {
   list-style: none;
-  padding: 10px ;
+  padding: 10px ; 
   border-radius: 5px;
   text-align: justify;
   margin-top: 2px; 
-  width: 280%;
+  width: 220%;
   background: #fff;
   box-shadow: rgba(116, 67, 231, 0.767) 0px 50px 100px -20px, rgba(88, 25, 235, 0.425) 0px 30px 60px -30px, rgba(100, 145, 230, 0.938) 0px -2px 6px 0px inset;
   transition: transform 0.5s;
+}
+.todolist ul li::after{
+  margin-bottom: 20px;
 }
 .todolist ul li:hover {
   transform: scale(1.1);
@@ -226,6 +239,28 @@ input.error {
   opacity: 1; 
   font-size: larger;
 }
+
+/* Hide default scrollbar */
+.todolist::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+.todolist::-webkit-scrollbar-track {
+  background: transparent
+}
+
+/* Handle */
+.todolist::-webkit-scrollbar-thumb {
+  background: #d7dbdd;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+.todolist::-webkit-scrollbar-thumb:hover {
+  background: #868282;
+} 
 .todolist ul li span {
   width: 20px ;
   height: 20px;
