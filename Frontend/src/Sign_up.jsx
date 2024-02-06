@@ -54,7 +54,7 @@ function SignUp() {
       const res = await response.json() 
       if (response.ok) {
        const messaage = res.message 
-       if (messaage.includes('not')||messaage.includes('Please')) {
+       if (messaage.includes('not')||messaage.includes('Please')||messaage.includes('already')) {
          setTimeout(() => {
           setPopMessage('')
           setpassword('')
@@ -85,7 +85,7 @@ function SignUp() {
   }
 
   return <div>
-    <div id="pop-message" className={popmessage.includes('both')|| popmessage.includes('username')|| popmessage.includes('password')|| popmessage.includes('Please')||popmessage.includes('not')?'warn':'success'}>{popmessage}</div>
+    <div id="pop-message" className={popmessage.includes('both')|| popmessage.includes('username')|| popmessage.includes('password')|| popmessage.includes('Please')||popmessage.includes('not')||popmessage.includes('already')?'warn':'success'}>{popmessage}</div>
     <div className="inputs">
       <h1>Todos</h1>
       <p>create your own todos </p>

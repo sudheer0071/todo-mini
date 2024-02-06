@@ -114,6 +114,8 @@ route.put('/todo/:id', validationMiddleware, async (req,res)=>{
   if (!parsePayload.success) {
     return res.send("You sent a wrong inputs")
   }  
+
+  // console.log(createPayload.id);
   // console.log(todoid); 
   const todoid = await user.todos.includes(createPayload.id)
   if (!todoid) {
