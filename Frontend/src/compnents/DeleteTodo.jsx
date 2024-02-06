@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 
 
 export function DeleteTodo({todoid, setTodos}){ 
+  const Token = localStorage.getItem("Token")
   async function deletetodo(){
     try {
       
@@ -10,7 +11,7 @@ export function DeleteTodo({todoid, setTodos}){
         method:'DELETE',
         headers:{
        "Content-Type":"application/json",
-       "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvaG5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjNkNDUiLCJpYXQiOjE3MDcwNjI2MDJ9.PijKvueqJLIU2rvn0zJxKJhKgREBAL0ZuBIbDI6w_3o"
+       "authorization":Token
       },
     //  body:{}
   })

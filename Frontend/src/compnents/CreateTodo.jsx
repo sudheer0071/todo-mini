@@ -8,6 +8,8 @@ export function CreateTodo({setTodos}){
   const [emptyTitle, setEmptyTitle] = useState(false)
   const [emptyDescription, setEmptyDescription] = useState(false) 
 
+  const Token = localStorage.getItem('Token')
+
   async function addtodo(){
 
      if (title=="" || description=="") {
@@ -44,7 +46,7 @@ export function CreateTodo({setTodos}){
         method:'POST',
       headers:{
         "Content-Type":"application/json",
-        "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvaG5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjNkNDUiLCJpYXQiOjE3MDcwNjI2MDJ9.PijKvueqJLIU2rvn0zJxKJhKgREBAL0ZuBIbDI6w_3o"
+        "authorization":Token
       },
       body: JSON.stringify({title:title , description:description})
     })

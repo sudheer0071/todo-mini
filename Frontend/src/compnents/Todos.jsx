@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 
 export function Todos({todos, setTodos}){
+const Token = localStorage.getItem("Token")
+
 const[displayTodos, setDisplayTodos] = useState([])
 
 const fetchTodos = async ()=>{
@@ -9,7 +11,7 @@ const fetchTodos = async ()=>{
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
-        "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkpvaG5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjNkNDUiLCJpYXQiOjE3MDcwNjI2MDJ9.PijKvueqJLIU2rvn0zJxKJhKgREBAL0ZuBIbDI6w_3o"
+        "authorization": Token
       },
     });
     if (response.ok) {

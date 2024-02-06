@@ -26,8 +26,10 @@ route.post('/signup', async(req, res)=>{
 
 route.post('/signin', async(req, res)=>{
   const createPayload = req.body
+  console.log(createPayload);
   const Exist = await User.findOne({username:createPayload.username})
   // console.log(Exist);
+  console.log(createPayload.username);
   if (!Exist) {
     return res.json({message:"User doesn not exist"})
   }
