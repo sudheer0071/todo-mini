@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 // import { useHistory } from 'react-router-dom'; 
 
-function SignIn({ onSignIn }) {
+function SignIn() {
   // const[signin, setSignin] = useState(false)
   const [popmessage, setPopMessage] = useState('') 
   const [username, setusername] = useState("")
   const [password, setpassword] = useState("")
   const [emptyusername, setEmptyusername] = useState(false)
   const [emptypassword, setEmptypassword] = useState(false)
+  const navigate = useNavigate()
   const handlleOnclick = async () => {
 
     if (username == "" || password == "") {
@@ -48,12 +51,9 @@ function SignIn({ onSignIn }) {
         body:  JSON.stringify({username: username, password: password})
       })
       console.log(username,password);
-      const res = await response.json()
-      console.log(res.token);
-      console.log(res.message);
+      const res = await response.json() 
       if (response.ok) {
-       const messaage =  res.message
-       console.log("message: "+messaage);
+       const messaage =  res.message 
        if (messaage.includes('not')||messaage.includes('zod')) {
          setTimeout(() => {
           setPopMessage('')
@@ -68,8 +68,9 @@ function SignIn({ onSignIn }) {
           setpassword('')
           setusername('')
           setPopMessage('')
-          localStorage.setItem('Token',token)
-          onSignIn()
+          localStorage.setItem('Token',token) 
+          console.log(history);
+          navigate('/todos')
         }, 1000);
         setPopMessage(res.message)
       }
@@ -84,8 +85,15 @@ function SignIn({ onSignIn }) {
   }
 
   return <div>
-    <div id="pop-message" className={popmessage.includes('both')|| popmessage.includes('username')|| popmessage.includes('password')|| popmessage.includes('zod')||popmessage.includes('not')?'warn':'success'}>{popmessage}</div>
+    <div id="pop-message" className={popmessage.includes('both')|| popmessage.includes('username')|| popmessage.includes('password')|| popmessage.includes('Invalid')||popmessage.includes('not')?'warn':'success'}>{popmessage}</div>
     <div className="inputs">
+    <h1>Todos</h1>
+      <p>create your own todos </p>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <input type="text" value={username} className={emptyusername == true ? 'error' : ''} placeholder="Username or Email" id="username" onChange={(e) => {
         const value = e.target.value
         setusername(value)
@@ -99,8 +107,9 @@ function SignIn({ onSignIn }) {
       }} />
     </div>
     <br /><br />
-    <button className="btn" onClick={handlleOnclick}>Sign In</button>
-
+    <button className="btn" onClick={()=>{handlleOnclick()}}>Sign In</button>
+    <br /><br />
+    <p>New User?  {<Link to="/">Sign Up</Link>}</p>
   </div>
 }
 

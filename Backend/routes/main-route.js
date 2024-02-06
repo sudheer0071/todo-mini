@@ -20,7 +20,9 @@ route.post('/signup', async(req, res)=>{
     }
     const token = jwt.sign({username:createPayload.username, password:createPayload.password}, secretkey)
     await User.create({username:createPayload.username, password:createPayload.password, token})
-    res.json({message:"User created successfully!"})
+    const userr = await User.findOne({username:createPayload.username})
+    console.log(userr.token);
+    res.json({message:"User created successfully!",token:userr.token})
   }
 })  
 
@@ -40,10 +42,10 @@ route.post('/signin', async(req, res)=>{
     console.log(credentials);
 
 
-    if (!parsePayload.success) {
-      return res.json({message:"Make sure email and password must be valid as per zod"})
-    }
-    else if (!credentials) {
+    // if (!parsePayload.success) {
+    //   return res.json({message:"Make sure email and password must be valid as per zod"})
+    // }
+    if (!credentials) {
       return res.json({message:"Invalid Credentials"})
     }
     else{

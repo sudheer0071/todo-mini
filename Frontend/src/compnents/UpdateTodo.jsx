@@ -24,29 +24,37 @@ const Token = localStorage.getItem("Token")
           }, 1000);
            setPopMessage("Please enter atleast one feild")   
           }  
-          else{
-      const response = await fetch("http://localhost:3000/todo/"+todoid,{
-        method:'PUT',
-        headers:{
-          "Content-Type":"application/json",
-          "authorization":Token
-      },
-      body: JSON.stringify({title:title})
-    })
-    const todos = await response.json()
-    if (response.ok) { 
-      setTimeout(() => {
-        setTitle("")
-        setDescription("") 
-        setPopMessage("") 
-        setShowUpdateTodo(false)
-        onClose() 
-      }, 1000);  
-      setPopMessage(todos.message)
-      setTodos(todos.todo)
-    } 
+else {
+    let requestBody = {};
+    if (title) {
+      requestBody.title = title;
     }
+    if (description) {
+      requestBody.description = description;
+    }
+
+    const response = await fetch("http://localhost:3000/todo/" + todoid, {
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json",
+        "authorization": Token
+      },
+      body: JSON.stringify(requestBody)
+    });
     
+    const todos = await response.json();
+    if (response.ok) {
+      setTimeout(() => {
+        setTitle("");
+        setDescription("");
+        setPopMessage("");
+        setShowUpdateTodo(false);
+        onClose();
+      }, 1000);
+      setPopMessage(todos.message);
+      setTodos(todos.todo);
+    }
+  }
   }
   return (<div>
     <div id="pop-message" className={popmessage.includes('atleast')?'warn':'success'}>{popmessage}</div> 
