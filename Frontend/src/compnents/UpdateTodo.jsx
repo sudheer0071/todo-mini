@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 
-export function UpdateTodo({todoid, onClose}){  
+export function UpdateTodo({todoid, onClose, setTodos}){  
  const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [popmessage, setPopMessage] = useState("")
@@ -32,19 +32,16 @@ export function UpdateTodo({todoid, onClose}){
       body: JSON.stringify({title:title})
     })
     const todos = await response.json()
-    if (response.ok) {
-      console.log(title, description); 
-      console.log(todos.message); 
+    if (response.ok) { 
       setTimeout(() => {
         setTitle("")
         setDescription("") 
         setPopMessage("") 
         setShowUpdateTodo(false)
         onClose() 
-      }, 1000); 
-      console.log(todos.message);
+      }, 1000);  
       setPopMessage(todos.message)
- 
+      setTodos(todos.todo)
     } 
     }
     

@@ -36,6 +36,8 @@ route.post('/signin', async(req, res)=>{
     const credentials = await User.findOne({username:createPayload.username, 
     password:createPayload.password})
     console.log(credentials);
+
+
     if (!parsePayload.success) {
       return res.json({message:"Make sure email and password must be valid as per zod"})
     }
@@ -43,7 +45,9 @@ route.post('/signin', async(req, res)=>{
       return res.json({message:"Invalid Credentials"})
     }
     else{
-      res.json({message:"Fetching Details..."})
+      // const user = await User.findOne({username:createPayload.username})
+
+      res.json({message:"Fetching Details...",token:credentials.token})
     }
   }
 }) 
@@ -112,9 +116,15 @@ route.put('/todo/:id', validationMiddleware, async (req,res)=>{
   if (!todoid) {
     return res.json({message:"Wrong todo id"})
   }
- await Todo.updateOne({_id:createPayload.id}, {title:title, description:description} ) 
+  await Todo.updateOne({_id:createPayload.id}, {title:title, description:description} ) 
+  const userr = await User.findOne({username:username})
+  const todos = await Todo.find({_id:{"$in":userr.todos}})
+  const newtodos = todos.map((todo)=>({
+    title:todo.title, description:todo.description
+  }))
+  console.log(newtodos);
   // After updating todos in mongodb databse...
-  res.json({message:"Todo Updated!"})
+  res.json({message:"Todo Updated!",todo:newtodos})
 })
 
 route.delete('/todo/:id',validationMiddleware, async (req,res)=>{
@@ -132,6 +142,13 @@ route.delete('/todo/:id',validationMiddleware, async (req,res)=>{
       // user.todos.splice(index,1)
       await User.updateOne({username:username}, {"$pull":{todos:createPayload.id}})
       await Todo.deleteOne({_id:createPayload.id})
-    res.json({message:"Todo Deleted"})
+
+      const userr = await User.findOne({username:username})
+      const todos = await Todo.find({_id:{"$in":userr.todos}})
+      const newtodos =todos.map((todo)=>({
+        title:todo.title, description:todo.description
+      }))
+      console.log(newtodos); 
+    res.json({message:"Todo Deleted!",todo:newtodos})
 })
-module.exports = route   
+module.exports = route    

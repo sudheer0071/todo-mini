@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import React from 'react';
 import Modal from 'react-modal'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
@@ -6,6 +7,7 @@ import './App.css'
 import { CreateTodo } from './compnents/CreateTodo'
 import { UpdateTodo } from './compnents/UpdateTodo'
 import { Todos } from './compnents/Todos' 
+import { DeleteTodo } from './compnents/DeleteTodo'
 
 Modal.setAppElement("#root")
 
@@ -14,14 +16,18 @@ Modal.setAppElement("#root")
   const [todos, setTodos] = useState([])
   const [isOpen, setIsOpen] = useState(false);
   const [updateTodoId,setUpdateTodoId] = useState('')
-  const [deleteTodo,setDeleteTodo] = useState('')
+  const [deleteTodoId,setDeleteTodoId] = useState('')
+  const [showdeleteTodo, setShowDeleteTodo] = useState(false)
  
   function todoList(){
+    if (!todos) return; 
+
      const todoss = todos.map((todo,index)=>{
      return <div key={index}> 
      <li><span>{index+1}</span>{todo.title} 
      <div className='actions'>
-      <button className='list-btns' onClick={}><i class="far fa-trash-alt"></i></button>
+      <button className='list-btns' onClick={()=> { setDeleteTodoId(todo.id); setShowDeleteTodo(true);setTimeout(() => {
+        window.location.reload() }, 1000); }}><i class="far fa-trash-alt"></i></button>
       <button className='list-btns' onClick={()=>{setUpdateTodoId(todo.id); toggleModal()}} ><i class="far fa-edit"></i></button>
       <button className='list-btns check'><i class="fas fa-check"></i></button>
      </div>
@@ -30,7 +36,7 @@ Modal.setAppElement("#root")
      }) 
      setTodoList(todoss)
   }
- 
+  
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
@@ -58,10 +64,11 @@ Modal.setAppElement("#root")
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
-         <UpdateTodo todoid={updateTodoId} onClose={toggleModal}></UpdateTodo>
+         <UpdateTodo todoid={updateTodoId} setTodos={setTodos} onClose={toggleModal}></UpdateTodo>
       </Modal>
             <h1>Todos</h1>
             <CreateTodo setTodos={setTodos}></CreateTodo>  
+            {showdeleteTodo && <DeleteTodo todoid = {deleteTodoId} setTodos = {setTodos}></DeleteTodo>}
          <div className='all-todos'> 
             <div className="display-todos"> 
               <Todos
@@ -78,5 +85,5 @@ Modal.setAppElement("#root")
        </div>
   )
 }
-
+ 
 export default App

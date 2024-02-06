@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 export function Todos({todos, setTodos}){
 const[displayTodos, setDisplayTodos] = useState([])
 
-const fetchTodos = async  ()=>{
+const fetchTodos = async ()=>{
   try {
     const response = await fetch("http://localhost:3000/todos", {
       method: 'GET',
@@ -38,7 +38,9 @@ const fetchTodos = async  ()=>{
       setDisplayTodos(todoss) 
   } 
   useEffect(()=>{ 
-    fetchTodos()
+    if (todos) {
+      fetchTodos()
+    }
   },[])   
   return <div> 
     <div>   

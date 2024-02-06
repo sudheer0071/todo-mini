@@ -64,6 +64,7 @@ export function CreateTodo({setTodos}){
      } 
       }
   }
+ 
   return <div className="add-todo-section">
     <div id="pop-message" className={popmessage.includes('alredy') || popmessage.includes('both') || popmessage.includes('title')||popmessage.includes('description')?'warn':'success'}>{popmessage}</div> 
     <div className="inputs">
