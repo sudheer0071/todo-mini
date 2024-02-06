@@ -33,7 +33,7 @@ else {
       requestBody.description = description;
     }
 
-    const response = await fetch("http://localhost:3000/todo/" + todoid, {
+    const response = await fetch("https://todo-mini.onrender.com/todo/" + todoid, {
       method: 'PUT',
       headers: {
         "Content-Type": "application/json",

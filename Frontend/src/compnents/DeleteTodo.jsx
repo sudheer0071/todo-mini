@@ -7,7 +7,7 @@ export function DeleteTodo({todoid, setTodos}){
   async function deletetodo(){
     try {
       
-      const response = await fetch("http://localhost:3000/todo/"+todoid,{
+      const response = await fetch("https://todo-mini.onrender.com/todo/"+todoid,{
         method:'DELETE',
         headers:{
        "Content-Type":"application/json",
