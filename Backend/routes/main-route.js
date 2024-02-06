@@ -6,7 +6,7 @@ const secretkey = "12345"
 
 const route = Router()
    
-route.post('/signup', async(req, res)=>{
+route.post('/signup', async(req, res)=> {
   const createPayload = req.body
   const alreadyExist = await User.findOne({username:createPayload.username})  
   if (alreadyExist) {
