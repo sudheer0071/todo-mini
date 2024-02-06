@@ -7,6 +7,12 @@ const todos = require("../Backend/routes/main-route")
 app.use(cors())
 app.use('/', todos)
 
- 
-app.listen(3000) 
 
+app.get('/',(req,res)=>{
+  res.send("backend is working fine")
+})
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+   
