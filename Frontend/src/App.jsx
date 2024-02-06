@@ -27,7 +27,7 @@ Modal.setAppElement("#root")
      <li><span>{index+1}</span>{todo.title} 
      <div className='actions'>
       <button className='list-btns' onClick={()=> { setDeleteTodoId(todo.id); setShowDeleteTodo(true);setTimeout(() => {
-        window.location.reload() }, 1000); }}><i class="far fa-trash-alt"></i></button>
+        window.location.reload()}, 1000); }}><i class="far fa-trash-alt"></i></button>
       <button className='list-btns' onClick={()=>{setUpdateTodoId(todo.id); toggleModal()}} ><i class="far fa-edit"></i></button>
       <button className='list-btns check'><i class="fas fa-check"></i></button>
      </div>

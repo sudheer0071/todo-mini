@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 // import { useHistory } from 'react-router-dom'; 
 
-function SignUn({onSignUp}){
+function SignUp({onSignUp}){
   const[signin, setSignin] = useState(false)
   // const history = useHistory();
  
@@ -13,4 +13,4 @@ function SignUn({onSignUp}){
    </div>
 }
 
-export default SignIn
+export default SignUp
