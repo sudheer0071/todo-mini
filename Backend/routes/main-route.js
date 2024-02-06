@@ -1,8 +1,7 @@
 const { Router } = require("express");
 const { createtodo, updateTodo, createUser, validationMiddleware } = require("../middleware/auth-checks");
 const { Todo, User } = require("../db");
-const jwt = require("jsonwebtoken");
-const { parse } = require("dotenv"); 
+const jwt = require("jsonwebtoken"); 
 const secretkey = "12345"
 
 const route = Router()
