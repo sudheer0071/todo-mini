@@ -25,7 +25,7 @@ route.post('/signup', async (req, res)=> {
   }
 })  
 
-route.post('/signin', async(req, res)=>{
+route.post('/signin', async (req, res)=> {
   const createPayload = req.body
   console.log(createPayload);
   const Exist = await User.findOne({username:createPayload.username})
