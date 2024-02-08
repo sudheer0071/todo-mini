@@ -185,11 +185,17 @@ input.error {
 .updatetodo-btn{
   position: absolute;
   top: 250px;
-
   margin-left:270px; 
 }
+.updatetodo-btn-done{
+  position: absolute;
+  top: 250px;
+  margin-left:270px; 
+  background-color: rgb(32, 236, 158);
+}
+
 .updatetodo-btn:hover{
-  background-color: #30e0ab;
+  background-color: #646cff;   
   color:black;
 }
 .displaytodos{

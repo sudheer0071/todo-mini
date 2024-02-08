@@ -10,6 +10,7 @@ const Token = localStorage.getItem("Token")
   const [emptyTitle, setEmptyTitle] = useState(false)
   const [emptyDescription, setEmptyDescription] = useState(false) 
   const [showupdateTodo, setShowUpdateTodo] = useState(true)
+  const [updatebtn, setUpdateBtn] = useState('Update Todo')
 
   
   const updatetodo = async()=>{
@@ -48,9 +49,11 @@ else {
         setTitle("");
         setDescription("");
         setPopMessage("");
+        setUpdateBtn('Update Todo')
         setShowUpdateTodo(false);
         onClose();
       }, 1000);
+      setUpdateBtn("Done")
       setPopMessage(todos.message);
       setTodos(todos.todo);
     }
@@ -75,7 +78,7 @@ else {
     </div>
      <br /><br />
     <div className="update-todo">
-    <button className="btn updatetodo-btn" type="sibmit" onClick={updatetodo}>Update Todo</button>
+    <button className={updatebtn=='Done'?'done updatetodo-btn-done':'btn updatetodo-btn'}  type="sibmit" onClick={updatetodo}>{updatebtn}</button>
     </div> 
     
     <p className="update-warn">Please reload page before updating todos</p>
