@@ -73,12 +73,12 @@ else {
       setDescription(value)
     }}/> 
     </div>
-    <br />
-    <br />
+     <br /><br />
     <div className="update-todo">
     <button className="btn updatetodo-btn" type="sibmit" onClick={updatetodo}>Update Todo</button>
     </div> 
-    <p>please reload page before updating todos</p>
+    
+    <p className="update-warn">Please reload page before updating todos</p>
      </div>
   )}  
   </div>
