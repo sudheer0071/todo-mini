@@ -6,6 +6,7 @@ export function CreateTodo({setTodos}){
   const [description, setDescription] = useState("")
   const [popmessage, setPopMessage] = useState("")
   const [emptyTitle, setEmptyTitle] = useState(false)
+  const [addtodobtn, setAddTodobtn] = useState('Add Todo')
   const [emptyDescription, setEmptyDescription] = useState(false) 
 
   const Token = localStorage.getItem('Token')
@@ -60,7 +61,9 @@ export function CreateTodo({setTodos}){
           setTitle("")
           setDescription("") 
           setTodos(todos.todos)
+          setAddTodobtn('Add Todo')
         }, 1000); 
+        setAddTodobtn('Done')
         setPopMessage(todos.message)
         console.log(todos.todos);
      } 
@@ -84,7 +87,7 @@ export function CreateTodo({setTodos}){
     </div>
     <br />
     <br />
-    <button className="btn" onClick={addtodo}>Add a Todo</button>
+    <button className={addtodobtn=='Done'?'done':'btn'} onClick={addtodo}>{addtodobtn}</button>
     <br /><br />
   </div>
 }
