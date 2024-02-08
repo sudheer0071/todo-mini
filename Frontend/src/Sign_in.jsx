@@ -54,7 +54,7 @@ function SignIn() {
       const res = await response.json() 
       if (response.ok) {
        const messaage =  res.message 
-       if (messaage.includes('not')||messaage.includes('zod')) {
+       if (messaage.includes('not')||messaage.includes('Invalid')) {
          setTimeout(() => {
           setPopMessage('')
           setpassword('')
