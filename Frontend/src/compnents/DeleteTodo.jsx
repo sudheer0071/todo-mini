@@ -13,7 +13,7 @@ export function DeleteTodo({todoid, setTodos}){
        "Content-Type":"application/json",
        "authorization":Token
       },
-    //  body:{}
+    
   })
   
   if (response.ok) {
