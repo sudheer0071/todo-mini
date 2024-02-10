@@ -109,7 +109,7 @@ function SignUp() {
     <br /><br />
     <button className="btn" onClick={handlleOnclick}>Sign Up</button>
     <br /><br />
-    <p>Already have an accout? {<Link to="/signin">Sign In</Link>}</p>
+    <p>Already have an accout? {<Link to="/signin">Sign In</Link>} </p>
   </div>
 }
 
