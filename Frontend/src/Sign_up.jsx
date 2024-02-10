@@ -59,7 +59,7 @@ function SignUp() {
           setPopMessage('')
           setpassword('')
           setusername('')
-        }, 1000); 
+        }, 3000); 
         console.log("inside zod error");
         setPopMessage(messaage)
       }
