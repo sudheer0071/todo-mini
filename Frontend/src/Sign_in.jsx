@@ -106,9 +106,9 @@ function SignIn() {
         setpassword(value)
       }} />
     </div>
-    <br /><br />
+    <br/><br />
     <button className="btn" onClick={()=>{handlleOnclick()}}>Sign In</button>
-    <br /><br />
+    <br/><br />
     <p>New User?  {<Link to="/">Sign Up</Link>}</p>
   </div>
 }
