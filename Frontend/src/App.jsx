@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import React from 'react';
 import Modal from 'react-modal'
 // import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
 import { CreateTodo } from './compnents/CreateTodo'
 import { UpdateTodo } from './compnents/UpdateTodo'
