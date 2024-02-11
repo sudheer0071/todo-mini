@@ -85,10 +85,10 @@ export function CreateTodo({setTodos}){
       setDescription(value)
     }}/> 
     </div>
-    <br />
-    <br />
+    <br/>
+    <br/>
     <button className={addtodobtn=='Done'?'done':'btn'} onClick={addtodo}>{addtodobtn}</button>
-    <br /><br />
+    <br/><br />
   </div>
 }
 
