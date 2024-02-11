@@ -49,7 +49,7 @@ export function CreateTodo({setTodos}){
         "Content-Type":"application/json",
         "authorization":Token
       },
-      body: JSON.stringify({title:title , description:description})
+      body: JSON.stringify({title:title,description:description})
     })
     const todos = await response.json()
     
