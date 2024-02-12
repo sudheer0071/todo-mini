@@ -10,6 +10,7 @@ function SignUp() {
   const [password, setpassword] = useState("")
   const [emptyusername, setEmptyusername] = useState(false)
   const [emptypassword, setEmptypassword] = useState(false)
+  const [loader,setLoader] = useState('Sign Up')
   const navigate = useNavigate()
 
   const handlleOnclick = async () => {
@@ -72,6 +73,7 @@ function SignUp() {
           localStorage.setItem('Token',token)
           navigate('/todos')
         }, 1000);
+        setLoader(' ')
         setPopMessage(res.message)
       }
       }
@@ -107,7 +109,7 @@ function SignUp() {
       }} />
     </div>
     <br /><br />
-    <button className="btn" onClick={handlleOnclick}>Sign Up</button>
+    <button className= 'btn' onClick={handlleOnclick}><div class={loader=='Sign Up'?'':'lds-ellipsis'}>  {loader == 'Sign Up' ? 'Sign Up' : ' '}<div></div><div></div><div></div><div></div></div></button>
     <br /><br />
     <p>Already have an accout? {<Link to="/signin">Sign In</Link>} </p>
   </div>

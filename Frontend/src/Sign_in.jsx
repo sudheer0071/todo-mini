@@ -11,6 +11,7 @@ function SignIn() {
   const [password, setpassword] = useState("")
   const [emptyusername, setEmptyusername] = useState(false)
   const [emptypassword, setEmptypassword] = useState(false)
+  const [loader,setLoader] = useState('Sign In')
   const navigate = useNavigate()
   const handlleOnclick = async () => {
 
@@ -72,6 +73,7 @@ function SignIn() {
           console.log(history);
           navigate('/todos')
         }, 1000);
+        setLoader('')
         setPopMessage(res.message)
       }
       }
@@ -106,8 +108,8 @@ function SignIn() {
         setpassword(value)
       }} />
     </div>
-    <br/><br />
-    <button className="btn" onClick={()=>{handlleOnclick()}}>Sign In</button>
+    <br/><br /> 
+    <button className= 'btn' onClick={()=>{handlleOnclick()}}><div class={loader=='Sign In'?'':'lds-ellipsis'}>  {loader == 'Sign In' ? 'Sign In' : ' '}<div></div><div></div><div></div><div></div></div></button>
     <br/><br />
     <p>New User?  {<Link to="/">Sign Up</Link>}</p>
   </div>
