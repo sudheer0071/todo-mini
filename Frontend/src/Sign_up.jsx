@@ -14,7 +14,7 @@ function SignUp() {
   const navigate = useNavigate()
 
   const handlleOnclick = async () => {
-
+  
     if (username == "" || password == "") {
       if (username == "" && password == "") {
         setEmptyusername(true)
@@ -44,6 +44,7 @@ function SignUp() {
       }
     }
     else { 
+      setLoader('')
       const response = await fetch("https://todo-mini.onrender.com/signup", {
         method: 'POST',
         headers: {
@@ -62,6 +63,7 @@ function SignUp() {
           setusername('')
         }, 3000); 
         console.log("inside zod error");
+        
         setPopMessage(messaage)
       }
       else{
