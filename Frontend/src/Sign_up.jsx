@@ -14,7 +14,7 @@ function SignUp() {
   const navigate = useNavigate()
 
   const handlleOnclick = async () => {
-  
+  try { 
     if (username == "" || password == "") {
       if (username == "" && password == "") {
         setEmptyusername(true)
@@ -87,6 +87,12 @@ function SignUp() {
         }, 1000);
       }
     }
+  } catch (error) {
+    setTimeout(() => {
+      setPopMessage("")
+    }, 3000);  
+    setPopMessage("There might be issue in from backend server host")
+  }
   }
 
   return <div>
