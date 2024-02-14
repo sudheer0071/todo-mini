@@ -13,8 +13,11 @@ function SignIn() {
   const [emptypassword, setEmptypassword] = useState(false)
   const [loader,setLoader] = useState('Sign In')
   const navigate = useNavigate()
+
   const handlleOnclick = async () => {
 
+try {
+  
     if (username == "" || password == "") {
       if (username == "" && password == "") {
         setEmptyusername(true)
@@ -44,6 +47,7 @@ function SignIn() {
       }
     }
     else { 
+      setLoader('')
       const response = await fetch("https://todo-mini.onrender.com/signin", {
         method: 'POST',
         headers: {
@@ -61,6 +65,7 @@ function SignIn() {
           setpassword('')
           setusername('')
         }, 1000); 
+        setLoader('Sign In')
         setPopMessage(messaage)
       }
       else{
@@ -84,6 +89,13 @@ function SignIn() {
         }, 1000);
       }
     }
+  } catch (error) {
+    setTimeout(() => {
+      setPopMessage("")
+    }, 2000); 
+    setLoader('Sign In')
+    setPopMessage("There might be an issue from Backend Server Host")
+  }
   }
 
   return <div>
