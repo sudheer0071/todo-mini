@@ -79,7 +79,7 @@ function SignUp() {
         setLoader('')
         setPopMessage(res.message)
       }
-      }
+      } 
 
       else {
         setTimeout(() => {
