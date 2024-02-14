@@ -62,8 +62,9 @@ function SignUp() {
           setpassword('')
           setusername('')
         }, 3000); 
+        setLoader('Sign Up')
         console.log("inside zod error");
-        
+
         setPopMessage(messaage)
       }
       else{
@@ -75,7 +76,7 @@ function SignUp() {
           localStorage.setItem('Token',token)
           navigate('/todos')
         }, 1000);
-        setLoader(' ')
+        setLoader('')
         setPopMessage(res.message)
       }
       }
