@@ -122,7 +122,7 @@ try {
     </div>
     <br/><br /> 
     <button className= 'btn' onClick={()=>{handlleOnclick()}}><div class={loader=='Sign In'?'':'lds-ellipsis'}>  {loader == 'Sign In' ? 'Sign In' : ' '}<div></div><div></div><div></div><div></div></div></button>
-    <br/><br />
+    
     <p>New User?  {<Link to="/">Sign Up</Link>}</p>
   </div>
 }
