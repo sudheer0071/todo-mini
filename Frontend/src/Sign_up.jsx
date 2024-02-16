@@ -118,8 +118,7 @@ function SignUp() {
       }} />
     </div>
     <br /><br />
-    <button className= 'btn' onClick={handlleOnclick}><div class={loader=='Sign Up'?'':'lds-ellipsis'}>  {loader == 'Sign Up' ? 'Sign Up' : ' '}<div></div><div></div><div></div><div></div></div></button>
-    <br /><br />
+    <button className= 'btn' onClick={handlleOnclick}><div class={loader=='Sign Up'?'':'lds-ellipsis'}>  {loader == 'Sign Up' ? 'Sign Up' : ' '}<div></div><div></div><div></div><div></div></div></button> 
     <p>Already have an accout? {<Link to="/signin">Sign In</Link>} </p>
   </div>
 }
