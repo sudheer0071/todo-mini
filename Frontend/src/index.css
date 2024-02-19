@@ -603,9 +603,7 @@ input.error {
     }
      
   }
-    
-    
- 
+     
   @media (max-width: 568px) {
   /* Adjust styles for even smaller screens (e.g., smartphones) */
   /* Add your responsive styles here */
@@ -631,18 +629,14 @@ input.error {
   } 
   .update-warn{
     position: fixed; 
+    font-size: larger;
     margin: auto; 
     width: 100%; 
     left: 0px;
     text-align: center; 
   }
-  .update-todo-section{ 
-    width: 340PX;
-    height: 330PX; 
-    position: absolute;
-    margin-right: 43px; 
-    top: -90px;
-    right: 1px;   
+  .update-todo-section{  
+    height: 330PX;   
   } 
   .updatedtodo-inputs input{ 
     width: 270px;
@@ -650,6 +644,5 @@ input.error {
   .updatetodo-btn{ 
     margin-left: 88px; 
   }
-  
-  
+   
 }
