@@ -587,7 +587,7 @@ input.error {
       text-align: center; 
     }
     .update-todo-section{ 
-      width: 80%;
+      width: 83%;
       height: 64%; 
       position: absolute;
       margin-right: 43px; 
@@ -600,10 +600,8 @@ input.error {
     } 
     .updatetodo-btn{ 
       margin-left: 188px; 
-    }
-     
-  }
-     
+    } 
+  } 
   @media (max-width: 568px) {
   /* Adjust styles for even smaller screens (e.g., smartphones) */
   /* Add your responsive styles here */
