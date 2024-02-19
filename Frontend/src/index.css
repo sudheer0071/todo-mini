@@ -31,9 +31,7 @@ a {
 a:hover {
   color: #535bf2;
 }
- 
-
-
+  
 #pop-message{ 
   position: fixed;
   display: flex;
@@ -330,8 +328,7 @@ input.error {
 }
 
 .update-todo-section{
-  background-color: #258bff;
-
+  background-image: linear-gradient(315deg, #370fc78a 0%, #000000 95%);
   width: 680PX;
   height: 330PX;
   border-radius: 5px;
@@ -345,6 +342,7 @@ input.error {
   box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 .updatedtodo-inputs{
   margin-top: 50px; 
 }
@@ -390,6 +388,11 @@ input.error {
   right: 0px;
   position: fixed; 
   height: 20px;
+  /* display: block; */
+}
+
+.mobile-todo-list{
+  display: none
 }
 
 .todolist{ 
@@ -531,4 +534,122 @@ input.error {
   button {
     background-color: #f9f9f9;
   }
+ 
+}
+
+@media (max-width: 1068px) {
+  /* Adjust styles for even smaller screens (e.g., smartphones) */
+  /* Add your responsive styles here */
+  .donee { 
+    margin: 1px;
+    }
+ 
+    
+  .updatetodo-btn-done{ 
+    margin-left: 75px;  
+  }
+
+
+  .inputs input{
+    width: 350px;
+    height: 50px;
+  }
+  
+  .todoChild{
+    width: 400px;
+  }
+
+  .right-bar{
+    display: none;
+  }
+
+  .mobile-list{
+    background-image:linear-gradient(315deg, #00306e 0%, #000000 95%);
+  }
+  .todolist{
+    margin: auto; 
+    position: absolute;
+    top: 40px;
+    right:0px;
+  }
+    .mobile-todo-list{
+      display: block;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+ 
+    .update-warn{
+      position: fixed; 
+      margin: auto;  
+       width: 100%; 
+      left: 0px;
+      text-align: center; 
+    }
+    .update-todo-section{ 
+      width: 80%;
+      height: 50%; 
+      position: absolute;
+      margin-right: 43px; 
+      top: -90px;
+      right: 1px;   
+    } 
+    .updatedtodo-inputs input{ 
+      width: 130%;
+      width: 400px;
+    } 
+    .updatetodo-btn{ 
+      margin-left: 188px; 
+    }
+     
+  }
+    
+    
+ 
+  @media (max-width: 568px) {
+  /* Adjust styles for even smaller screens (e.g., smartphones) */
+  /* Add your responsive styles here */
+  .inputs input{
+    width: 300px;
+    height: 45px;
+  }
+  
+  .todoChild{
+    width: 300px;
+  }
+
+  
+  .add-todo{
+    display: flex;
+    position: absolute;
+  }
+  .show-todo{
+    display: flex;
+    position: absolute;
+    right: 20px;
+    margin-top: -49px;
+  } 
+  .update-warn{
+    position: fixed; 
+    margin: auto; 
+    width: 100%; 
+    left: 0px;
+    text-align: center; 
+  }
+  .update-todo-section{ 
+    width: 340PX;
+    height: 330PX; 
+    position: absolute;
+    margin-right: 43px; 
+    top: -90px;
+    right: 1px;   
+  } 
+  .updatedtodo-inputs input{ 
+    width: 270px;
+  } 
+  .updatetodo-btn{ 
+    margin-left: 88px; 
+  }
+  
+  
 }

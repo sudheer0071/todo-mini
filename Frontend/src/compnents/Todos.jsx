@@ -45,7 +45,7 @@ const fetchTodos = async ()=>{
     }
   },[])   
   return <div> 
-    <div>   
+    <div className="show-todo">   
     {/* <button className="btn" onClick={fetchTodos}>Show todo</button>  */}
     <div className="rgb-btn">
       <a className= 'button-85' role="button" onClick={fetchTodos} >

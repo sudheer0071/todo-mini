@@ -87,11 +87,14 @@ export function CreateTodo({ setTodos }) {
     </div>
     <br />
     <br />
+
+    <div className="add-todo">
     {/* <button className={addtodobtn == 'Done' ? 'done' : 'btn'} onClick={addtodo}>{addtodobtn}</button> */}
     <div className="rgb-btn">
       <a className={addtodobtn == 'Done' ? 'donee' : 'button-85'} role="button" onClick={addtodo} >
         {addtodobtn}
       </a>
+    </div>
     </div>
     <br /><br />
   </div>

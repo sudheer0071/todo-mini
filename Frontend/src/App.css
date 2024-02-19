@@ -86,3 +86,12 @@
 .read-the-docs {
   color: #888;
 }
+
+
+@media (max-width: 1068px) {
+  .ModalCloseButton {  
+    margin-right: 43px;
+    margin-top: 70px; 
+    top: 30px;   
+  } 
+}

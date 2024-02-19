@@ -64,14 +64,14 @@ export function UpdateTodo({ todoid, onClose, setTodos }) {
     {showupdateTodo && (
       <div className="update-todo-section">
         <div className="inputs updatedtodo-inputs">
-          <input type="text" value={title} className={emptyTitle == true ? 'error' : ''} placeholder="Title" id="title" onChange={(e) => {
+          <input type="text" value={title} className={`mobile-update ${emptyTitle == true ? 'error' : ''}`} placeholder="Title" id="title" onChange={(e) => {
             const value = e.target.value
             setTitle(value)
           }} />
           <br />
           <br />
 
-          <input type="text" value={description} className={emptyDescription == true ? 'error' : ''} placeholder="Description" id="description" onChange={(e) => {
+          <input type="text" value={description} className={`mobile-update ${emptyDescription == true ? 'error' : ''}`} placeholder="Description" id="description" onChange={(e) => {
             const value = e.target.value
             setDescription(value)
           }} />
