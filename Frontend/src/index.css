@@ -649,10 +649,11 @@ input.error {
 
   
   .todolist ul li {  
-    width: 250px; 
+    width: 260px; 
+    margin-left: -10px;
   }
-
-  .todolist ul li:hover { 
+  
+  .todolist ul li:hover {  
     width: 270px; 
   }
   .add-todo{
