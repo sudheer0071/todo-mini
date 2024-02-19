@@ -199,7 +199,7 @@ h1 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 40px 10px;
+  /* margin: 30px 10px; */
   }
   
   .button-85:before {
@@ -327,6 +327,18 @@ input.error {
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+.no-todoss{
+  background-color: #646cff;
+  border-radius: 4px; 
+  margin-top: 60px;
+  font-size: x-large;
+  font-weight: 600;
+  width: 455px;
+  height: 80px;
+  box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 .update-todo-section{
   background-image: linear-gradient(315deg, #370fc78a 0%, #000000 95%);
   width: 680PX;
@@ -394,7 +406,11 @@ input.error {
 .mobile-todo-list{
   display: none
 }
-
+.notodos{
+  margin: auto;
+  color: #dfd9d9;
+  font-size: x-large; 
+}
 .todolist{ 
   background-color: #747bff; 
   overflow-y: auto;
@@ -423,6 +439,7 @@ input.error {
   border-radius: 5px;
   text-align: justify;
   margin-top: 2px; 
+  margin-right: 40px;
   width: 260px;
   background: #fff;
   box-shadow: rgba(116, 67, 231, 0.767) 0px 50px 100px -20px, rgba(88, 25, 235, 0.425) 0px 30px 60px -30px, rgba(100, 145, 230, 0.938) 0px -2px 6px 0px inset;
@@ -548,14 +565,7 @@ input.error {
   .updatetodo-btn-done{ 
     margin-left: 75px;  
   } 
-
-  .todolist ul li {  
-    width: 560px; 
-  }
-
-  .todolist ul li:hover { 
-    width: 600px; 
-  }
+ 
   .blur-wrapper {
     position: fixed;
     top: 0;
@@ -579,7 +589,9 @@ input.error {
   .todoChild{
     width: 400px;
   }
-
+.no-todoss{
+  width: 400px;
+}
   .right-bar{
     display: none; 
   }
@@ -595,6 +607,14 @@ input.error {
     right:42px;
   }
 
+  .todolist ul li {  
+    width: 560px;  
+  }
+
+  .todolist ul li:hover { 
+    width: 600px; 
+    margin-left: 10px;
+  }
 
     .mobile-todo-list{
       display: block;
@@ -638,6 +658,9 @@ input.error {
     width: 300px;
   }
  
+  .no-todoss{
+    width: 300px;
+  }
   .todolist{
     margin: auto; 
     position: absolute;
@@ -646,8 +669,7 @@ input.error {
     right:7px;
     max-height: 400px;
   }
-
-  
+ 
   .todolist ul li {  
     width: 260px; 
     margin-left: -10px;
@@ -655,6 +677,8 @@ input.error {
   
   .todolist ul li:hover {  
     width: 270px; 
+    margin-left: -13px;
+
   }
   .add-todo{
     display: flex;
