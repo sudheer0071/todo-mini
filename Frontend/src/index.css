@@ -566,6 +566,7 @@ input.error {
     z-index: 999;
   }  
    .close-btn{
+    margin-top: 55px;
     width: 16%;
     height: 4%;
     background-image: linear-gradient(315deg, #4917ff8a 0%, #000000 95%);
@@ -648,11 +649,11 @@ input.error {
 
   
   .todolist ul li {  
-    width: 260px; 
+    width: 250px; 
   }
 
   .todolist ul li:hover { 
-    width: 280px; 
+    width: 270px; 
   }
   .add-todo{
     display: flex;
