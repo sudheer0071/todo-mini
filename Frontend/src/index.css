@@ -626,7 +626,7 @@ input.error {
   } 
   .update-warn{
     position: fixed; 
-    font-size: larger;
+    font-size: medium;
     margin: auto; 
     width: 100%; 
     left: 0px;
