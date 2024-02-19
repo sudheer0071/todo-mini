@@ -537,7 +537,7 @@ input.error {
  
 }
 
-@media (max-width: 1068px) {
+@media (max-width: 1268px) {
   /* Adjust styles for even smaller screens (e.g., smartphones) */
   /* Add your responsive styles here */
   .donee { 
@@ -547,34 +547,57 @@ input.error {
     
   .updatetodo-btn-done{ 
     margin-left: 75px;  
+  } 
+
+  .todolist ul li {  
+    width: 560px; 
   }
 
-
-  .inputs input{
+  .todolist ul li:hover { 
+    width: 600px; 
+  }
+  .blur-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(7px); /*Adjust the blur radius as needed*/
+    z-index: 999;
+  }  
+   .close-btn{
+    width: 16%;
+    height: 4%;
+    background-image: linear-gradient(315deg, #4917ff8a 0%, #000000 95%);
+   }
+  /* .inputs input{
     width: 350px;
     height: 50px;
   }
-  
+   */
   .todoChild{
     width: 400px;
   }
 
   .right-bar{
-    display: none;
+    display: none; 
   }
 
   .mobile-list{
     background-image:linear-gradient(315deg, #00306e 0%, #000000 95%);
   }
-  .todolist{
+  .todolist{ 
     margin: auto; 
     position: absolute;
-    top: 40px;
-    right:0px;
+    top: 190px;
+    width: 90%;
+    right:42px;
   }
+
+
     .mobile-todo-list{
       display: block;
-      position: absolute;
+      position: absolute;  
       top: 10px;
       right: 10px;
     }
@@ -614,6 +637,23 @@ input.error {
     width: 300px;
   }
  
+  .todolist{
+    margin: auto; 
+    position: absolute;
+    top: 130px;
+    width: 92%;
+    right:7px;
+    max-height: 400px;
+  }
+
+  
+  .todolist ul li {  
+    width: 260px; 
+  }
+
+  .todolist ul li:hover { 
+    width: 280px; 
+  }
   .add-todo{
     display: flex;
     position: absolute;
