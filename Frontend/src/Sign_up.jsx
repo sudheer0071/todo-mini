@@ -112,7 +112,7 @@ function SignUp() {
       <br />
       <br />
 
-      <input type="text" value={password} className={emptypassword == true ? 'error' : ''} placeholder="Password" id="password" onChange={(e) => {
+      <input type="password" value={password} className={emptypassword == true ? 'error' : ''} placeholder="Password" id="password" onChange={(e) => {
         const value = e.target.value
         setpassword(value)
       }} />
