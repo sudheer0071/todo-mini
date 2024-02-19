@@ -121,7 +121,7 @@ try {
       }} />
     </div>
     <br/><br /> 
-    <div className="btnn">
+    <div className="rgb-btn">
       <a class="button-85" role="button" onClick={handlleOnclick} >   <div class={loader == 'Sign In' ? '' : 'lds-ellipsis'}>
         <div></div><div></div><div></div><div></div>
       </div>

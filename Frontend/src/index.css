@@ -6,7 +6,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   /* background-color: #242424; */
-  background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
+  background-image: linear-gradient(315deg, #00306e 0%, #000000 95%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,6 +14,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin: 0;
+  display: flex;
+  /* place-items: center; */
+  min-width: 320px;
+  min-height: 100vh; 
+}
 .lds-ellipsis {
   /* display:block;  */
   /* position: absolute; */
@@ -105,7 +112,7 @@ a:hover {
   background-color: rgb(231, 127, 127);
   color: #1a1a1a; 
 }
- 
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -254,7 +261,9 @@ h1 {
   height: 50px;
   border-radius: 5px; 
   border: 3px solid transparent;
-  background-color: rgb(48, 45, 45);
+  
+  /* background-color: rgb(4, 16, 43); */
+  background-image: linear-gradient(315deg, #125ab8 0%, #272525 95%);
   font-size: larger;
   transition: box-shadow 0.5s;
   box-shadow: 0 0 0.5em rgb(0, 0, 0);
