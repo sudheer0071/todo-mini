@@ -588,7 +588,7 @@ input.error {
     }
     .update-todo-section{ 
       width: 80%;
-      height: 50%; 
+      height: 64%; 
       position: absolute;
       margin-right: 43px; 
       top: -90px;
@@ -615,8 +615,7 @@ input.error {
   .todoChild{
     width: 300px;
   }
-
-  
+ 
   .add-todo{
     display: flex;
     position: absolute;
