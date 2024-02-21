@@ -30,10 +30,7 @@ const fetchTodos = async ()=>{
  
 
   function showtodos(){ 
-    if (todos.length===0) { 
-      // setDisplayTodos( <div className="todoChild">
-      //     <h2>No todos to show</h2>
-      //   </div>)
+    if (todos.length===0) {  
     }
     console.log(todos.length); 
      const todoss = todos.map((todo,index)=>{
