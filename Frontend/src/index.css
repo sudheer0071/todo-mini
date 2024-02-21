@@ -19,38 +19,40 @@ body {
   display: flex;
   /* place-items: center; */
   min-width: 320px;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
- 
+
 
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
-  
-#pop-message{ 
+
+#pop-message {
   position: fixed;
   display: flex;
   justify-content: center;
   top: 0px;
   left: 0px;
-  width: 100%; 
+  width: 100%;
   text-align: center;
   font-size: larger;
   z-index: 99;
 }
-.success{   
+
+.success {
   background-color: rgb(30, 212, 151);
   color: #1a1a1a;
 }
 
-.warn{ 
+.warn {
   background-color: rgb(231, 127, 127);
-  color: #1a1a1a; 
+  color: #1a1a1a;
 }
 
 h1 {
@@ -58,7 +60,7 @@ h1 {
   line-height: 1.1;
 }
 
-.btn {  
+.btn {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -72,7 +74,7 @@ h1 {
   transition: border-color 0.25s;
 }
 
-.done {  
+.done {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -87,15 +89,17 @@ h1 {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-.btn:hover {
-  background-color: #646cff;   
 
-} 
+.btn:hover {
+  background-color: #646cff;
+
+}
+
 .btn:focus,
 .btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
- 
+
 /* ***************************** LOADER ****************************** */
 
 .lds-ellipsis {
@@ -106,52 +110,63 @@ h1 {
   height: 24px;
   /* margin-top: 30px; */
 }
+
 .lds-ellipsis div {
-  position: absolute; 
+  position: absolute;
   top: 19px;
-  margin-left: 34px;  
+  margin-left: 34px;
   width: 13px;
   height: 13px;
   border-radius: 50%;
   background: #fff;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
+
 .lds-ellipsis div:nth-child(1) {
   left: 8px;
   animation: lds-ellipsis1 0.6s infinite;
 }
+
 .lds-ellipsis div:nth-child(2) {
   left: 8px;
   animation: lds-ellipsis2 0.6s infinite;
 }
+
 .lds-ellipsis div:nth-child(3) {
   left: 32px;
   animation: lds-ellipsis2 0.6s infinite;
 }
+
 .lds-ellipsis div:nth-child(4) {
   left: 56px;
   animation: lds-ellipsis3 0.6s infinite;
 }
+
 @keyframes lds-ellipsis1 {
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(1);
   }
 }
+
 @keyframes lds-ellipsis3 {
   0% {
     transform: scale(1);
   }
+
   100% {
     transform: scale(0);
   }
 }
+
 @keyframes lds-ellipsis2 {
   0% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(24px, 0);
   }
@@ -178,14 +193,14 @@ h1 {
   justify-content: center;
   align-items: center;
   /* margin: 40px 10px; */
-  }
-  
+}
+
 .donee {
   padding: 0.8em 2em;
   border: none;
   outline: none;
   text-decoration: none;
-  font-weight: 650; 
+  font-weight: 650;
   color: rgb(0, 0, 0);
   background-color: rgb(20, 243, 150);
   cursor: pointer;
@@ -200,9 +215,9 @@ h1 {
   justify-content: center;
   align-items: center;
   /* margin: 30px 10px; */
-  }
-  
-  .button-85:before {
+}
+
+.button-85:before {
   content: "";
   background: linear-gradient(45deg,
       #ff0000,
@@ -226,23 +241,23 @@ h1 {
   animation: glowing-button-85 20s linear infinite;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
-  }
-  
-  @keyframes glowing-button-85 {
+}
+
+@keyframes glowing-button-85 {
   0% {
     background-position: 0 0;
   }
-  
+
   50% {
     background-position: 400% 0;
   }
-  
+
   100% {
     background-position: 0 0;
   }
-  }
-  
-  .button-85:after {
+}
+
+.button-85:after {
   z-index: -1;
   content: "";
   position: absolute;
@@ -252,19 +267,20 @@ h1 {
   left: 0;
   top: 0;
   border-radius: 10px;
-  }
-  .rgb-btn{
-    width: 145px; 
-    margin: auto;
-  }  
-   
+}
 
-.inputs input{
+.rgb-btn {
+  width: 145px;
+  margin: auto;
+}
+
+
+.inputs input {
   width: 500px;
   height: 50px;
-  border-radius: 5px; 
+  border-radius: 5px;
   border: 3px solid transparent;
-  
+
   /* background-color: rgb(4, 16, 43); */
   background-image: linear-gradient(315deg, #125ab8 0%, #272525 95%);
   font-size: larger;
@@ -272,9 +288,9 @@ h1 {
   box-shadow: 0 0 0.5em rgb(0, 0, 0);
 }
 
-.update-warn{
+.update-warn {
   position: absolute;
-  top: 0px; 
+  top: 0px;
   margin: auto;
   left: 90px;
   background-color: #08a374;
@@ -282,9 +298,10 @@ h1 {
   text-align: center;
   border-radius: 5px
 }
+
 input.error {
   -webkit-animation: shake 0.2s ease-in-out 0s 2;
-          animation: shake 0.2s ease-in-out 0s 2;
+  animation: shake 0.2s ease-in-out 0s 2;
   box-shadow: 0 0 0.5em red;
 }
 
@@ -292,12 +309,15 @@ input.error {
   0% {
     margin-left: 0rem;
   }
+
   25% {
     margin-left: 0.5rem;
   }
+
   75% {
     margin-left: -0.5rem;
   }
+
   100% {
     margin-left: 0rem;
   }
@@ -307,29 +327,32 @@ input.error {
   0% {
     margin-left: 0rem;
   }
+
   25% {
     margin-left: 0.5rem;
   }
+
   75% {
     margin-left: -0.5rem;
   }
+
   100% {
     margin-left: 0rem;
   }
-} 
+}
 
-.todoChild{
+.todoChild {
   background-color: #646cff;
-  border-radius: 4px; 
+  border-radius: 4px;
   margin-top: 20px;
   width: 455px;
   box-shadow: rgba(255, 255, 255, 0.363) 0px 50px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.no-todoss{
+.no-todoss {
   background-color: #646cff;
-  border-radius: 4px; 
+  border-radius: 4px;
   margin-top: 60px;
   font-size: x-large;
   font-weight: 600;
@@ -339,7 +362,7 @@ input.error {
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.update-todo-section{
+.update-todo-section {
   background-image: linear-gradient(315deg, #370fc78a 0%, #000000 95%);
   width: 680PX;
   height: 330PX;
@@ -355,99 +378,110 @@ input.error {
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.updatedtodo-inputs{
-  margin-top: 50px; 
+.updatedtodo-inputs {
+  margin-top: 50px;
 }
-.update-todo{
+
+.update-todo {
   position: fixed;
 }
-.updatetodo-btn{
+
+.updatetodo-btn {
   position: absolute;
   top: 250px;
-  margin-left:270px; 
+  margin-left: 270px;
 }
-.updatetodo-btn-done{
+
+.updatetodo-btn-done {
   position: absolute;
   top: 250px;
-  margin-left:270px; 
+  margin-left: 270px;
   background-color: rgb(32, 236, 158);
 }
 
-.updatetodo-btn:hover{
-  background-color: #646cff;   
-  color:black;
+.updatetodo-btn:hover {
+  background-color: #646cff;
+  color: black;
 }
-.displaytodos{
+
+.displaytodos {
   display: grid;
   justify-content: center;
   width: 100%;
 }
 
-.sidebar{
+.sidebar {
   margin-left: 200px;
 }
 
-.all-todos{
+.all-todos {
   display: flex;
   justify-content: center;
 }
 
-.display-todos{
+.display-todos {
   padding-right: 0px;
 }
-.right-bar{ 
+
+.right-bar {
   top: 100px;
   right: 0px;
-  position: fixed; 
+  position: fixed;
   height: 20px;
   /* display: block; */
 }
 
-.mobile-todo-list{
+.mobile-todo-list {
   display: none
 }
-.notodos{
+
+.notodos {
   margin: auto;
   color: #dfd9d9;
-  font-size: x-large; 
+  font-size: x-large;
 }
-.todolist{ 
-  background-color: #747bff; 
+
+.todolist {
+  background-color: #747bff;
   overflow-y: auto;
   display: grid;
   position: relative;
   overflow-x: hidden;
   color: #1a1a1a;
-  max-height: 400px; color: #1a1a1a;  
+  max-height: 400px;
+  color: #1a1a1a;
   border-radius: 4px;
   display: flex;
   max-height: 550px;
-  width: 350px ;
+  width: 350px;
   margin-right: 30px;
-  border: 5px solid transparent; 
+  border: 5px solid transparent;
   justify-content: left;
   box-shadow: rgba(255, 255, 255, 0.363) 0px 20px 100px -20px, rgba(255, 255, 255, 0.425) 0px 30px 60px -30px, rgba(0, 0, 0, 0.842) 0px -2px 6px 0px inset;
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
- 
+
 .todolist ul:hover li {
   opacity: 0.5;
 }
+
 .todolist ul li {
   list-style: none;
-  padding: 10px ; 
+  padding: 10px;
   border-radius: 5px;
   text-align: justify;
-  margin-top: 2px; 
+  margin-top: 2px;
   margin-right: 40px;
   width: 260px;
   background: #fff;
   box-shadow: rgba(116, 67, 231, 0.767) 0px 50px 100px -20px, rgba(88, 25, 235, 0.425) 0px 30px 60px -30px, rgba(100, 145, 230, 0.938) 0px -2px 6px 0px inset;
   transition: transform 0.5s;
 }
-.todolist ul li::after{
+
+.todolist ul li::after {
   margin-bottom: 20px;
 }
+
 .todolist ul li:hover {
   transform: scale(1.1);
   z-index: 5;
@@ -457,7 +491,7 @@ input.error {
   margin-left: -12px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
   color: #ffffff;
-  opacity: 1; 
+  opacity: 1;
   font-size: larger;
 }
 
@@ -481,9 +515,10 @@ input.error {
 /* Handle on hover */
 .todolist::-webkit-scrollbar-thumb:hover {
   background: #868282;
-} 
+}
+
 .todolist ul li span {
-  width: 20px ;
+  width: 20px;
   height: 20px;
   text-align: center;
   line-height: 20px;
@@ -496,47 +531,50 @@ input.error {
   font-weight: 600;
   transform: translateY(-2px);
 }
+
 .todolist ul li:hover span {
-  background: #fff; 
+  background: #fff;
   color: #25bcff;
 }
 
 .todolist ul li .actions {
   position: absolute;
   top: 7px;
-  right: 10px; 
-  display: none; 
+  right: 10px;
+  display: none;
 }
 
-.todolist ul li:hover .actions{
-  display: block; 
+.todolist ul li:hover .actions {
+  display: block;
 }
-.list-btns{
+
+.list-btns {
   color: #fff;
   font-size: medium;
-  background: #25bcff; 
+  background: #25bcff;
   border: none;
-  cursor: pointer; 
+  cursor: pointer;
   transition: font-size 0.3s ease;
 }
 
-.list-btns:hover{
-  font-size: larger; 
+.list-btns:hover {
+  font-size: larger;
 }
 
-.check{ 
+.check {
   border-radius: 5px;
   margin-left: 7px;
   transition: font-size 0.5s ease;
 
 }
-.check:hover{
+
+.check:hover {
   background-color: green;
   border-radius: 30px;
   font-size: larger;
 }
 
-.list-btns:first-child{
+.list-btns:first-child {
   margin-right: 10px;
 }
 
@@ -545,167 +583,188 @@ input.error {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
- 
+
 }
 
 @media (max-width: 1268px) {
+
   /* Adjust styles for even smaller screens (e.g., smartphones) */
   /* Add your responsive styles here */
-  .donee { 
+  .donee {
     margin: 1px;
-    }
- 
-    
-  .updatetodo-btn-done{ 
-    margin-left: 75px;  
-  } 
- 
+  }
+
+
+  .updatetodo-btn-done {
+    margin-left: 75px;
+  }
+
   .blur-wrapper {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(7px); /*Adjust the blur radius as needed*/
+    backdrop-filter: blur(7px);
+    /*Adjust the blur radius as needed*/
     z-index: 999;
-  }  
-   .close-btn{
+  }
+
+  .close-btn {
     margin-top: 55px;
     width: 16%;
     height: 4%;
     background-image: linear-gradient(315deg, #4917ff8a 0%, #000000 95%);
-   }
+  }
+
   /* .inputs input{
     width: 350px;
     height: 50px;
   }
    */
-  .todoChild{
+  .todoChild {
     width: 400px;
   }
-.no-todoss{
-  width: 400px;
-}
-  .right-bar{
-    display: none; 
+
+  .no-todoss {
+    width: 400px;
   }
 
-  .mobile-list{
-    background-image:linear-gradient(315deg, #00306e 0%, #000000 95%);
+  .right-bar {
+    display: none;
   }
-  .todolist{ 
-    margin: auto; 
+
+  .mobile-list {
+    background-image: linear-gradient(315deg, #00306e 0%, #000000 95%);
+  }
+
+  .todolist {
+    margin: auto;
     position: absolute;
     top: 190px;
     width: 90%;
-    right:42px;
+    right: 42px;
   }
 
-  .todolist ul li {  
-    width: 560px;  
+  .todolist ul li {
+    width: 560px;
   }
 
-  .todolist ul li:hover { 
-    width: 600px; 
+  .todolist ul li:hover {
+    width: 600px;
     margin-left: 10px;
   }
 
-    .mobile-todo-list{
-      display: block;
-      position: absolute;  
-      top: 10px;
-      right: 10px;
-    }
- 
-    .update-warn{
-      position: fixed; 
-      margin: auto;  
-       width: 100%; 
-      left: 0px;
-      text-align: center; 
-    }
-    .update-todo-section{ 
-      width: 83%;
-      height: 64%; 
-      position: absolute;
-      margin-right: 43px; 
-      top: -90px;
-      right: 1px;   
-    } 
-    .updatedtodo-inputs input{ 
-      width: 130%;
-      width: 400px;
-    } 
-    .updatetodo-btn{ 
-      margin-left: 188px; 
-    } 
-  } 
-  @media (max-width: 568px) {
+  .mobile-todo-list {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .update-warn {
+    position: fixed;
+    margin: auto;
+    width: 100%;
+    left: 0px;
+    text-align: center;
+  }
+
+  .update-todo-section {
+    width: 83%;
+    height: 64%;
+    position: absolute;
+    margin-right: 43px;
+    top: -90px;
+    right: 1px;
+  }
+
+  .updatedtodo-inputs input {
+    width: 130%;
+    width: 400px;
+  }
+
+  .updatetodo-btn {
+    margin-left: 188px;
+  }
+}
+
+@media (max-width: 568px) {
+
   /* Adjust styles for even smaller screens (e.g., smartphones) */
   /* Add your responsive styles here */
-  .inputs input{
+  .inputs input {
     width: 300px;
     height: 45px;
   }
-  
-  .todoChild{
+
+  .todoChild {
     width: 300px;
   }
- 
-  .no-todoss{
+
+  .no-todoss {
     width: 300px;
   }
-  .todolist{
-    margin: auto; 
+
+  .todolist {
+    margin: auto;
     position: absolute;
     top: 130px;
     width: 92%;
-    right:7px;
+    right: 7px;
     max-height: 400px;
   }
- 
-  .todolist ul li {  
-    width: 260px; 
+
+  .todolist ul li {
+    width: 260px;
     margin-left: -10px;
   }
-  
-  .todolist ul li:hover {  
-    width: 270px; 
+
+  .todolist ul li:hover {
+    width: 270px;
     margin-left: -13px;
 
   }
-  .add-todo{
+
+  .add-todo {
     display: flex;
     position: absolute;
   }
-  .show-todo{
+
+  .show-todo {
     display: flex;
     position: absolute;
     right: 20px;
     margin-top: -49px;
-  } 
-  .update-warn{
-    position: fixed; 
+  }
+
+  .update-warn {
+    position: fixed;
     font-size: medium;
-    margin: auto; 
-    width: 100%; 
+    margin: auto;
+    width: 100%;
     left: 0px;
-    text-align: center; 
+    text-align: center;
   }
-  .update-todo-section{  
-    height: 330PX;   
-  } 
-  .updatedtodo-inputs input{ 
+
+  .update-todo-section {
+    height: 330PX;
+  }
+
+  .updatedtodo-inputs input {
     width: 270px;
-  } 
-  .updatetodo-btn{ 
-    margin-left: 88px; 
   }
-   
+
+  .updatetodo-btn {
+    margin-left: 88px;
+  }
+
 }
